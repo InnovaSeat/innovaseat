@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { XCircle } from "lucide-react";
 
 const features = [
   { icon: "🎧", title: "Audio 3D immersivo", description: "Speaker integrati e subwoofer." },
@@ -14,18 +13,27 @@ const features = [
 ];
 
 export default function FeaturesSection() {
+  /* abilita scroll morbido + rimuove il loader dopo 1s */
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
-    return () => (document.documentElement.style.scrollBehavior = "auto");
+    const timer = setTimeout(() => {
+      document.getElementById("loader")?.remove();
+    }, 1000);
+    return () => {
+      clearTimeout(timer);
+      document.documentElement.style.scrollBehavior = "auto";
+    };
   }, []);
 
   return (
     <>
+      {/* LOADER */}
       <div id="loader" className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-white">
         <img src="/logo.png" alt="Innovaseat" className="w-24 animate-pulse" />
         <div className="mt-6 h-12 w-12 animate-spin rounded-full border-4 border-white border-t-transparent" />
       </div>
 
+      {/* NAVBAR */}
       <nav className="sticky top-0 z-40 bg-white shadow">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
           <span className="text-xl font-bold">Innovaseat</span>
@@ -37,6 +45,7 @@ export default function FeaturesSection() {
         </div>
       </nav>
 
+      {/* FUNZIONALITÀ */}
       <section id="funzionalita" className="bg-white py-12 px-4 sm:px-6 md:px-8 text-gray-900">
         <div className="mx-auto max-w-7xl">
           <h2 className="mb-8 text-center text-4xl font-bold">Funzionalità principali</h2>
@@ -56,6 +65,7 @@ export default function FeaturesSection() {
         </div>
       </section>
 
+      {/* CHI SIAMO */}
       <section id="chi-siamo" className="mx-auto mb-20 max-w-3xl px-4 text-center text-gray-700">
         <h2 className="mb-6 text-4xl font-bold">Chi siamo</h2>
         <p className="text-lg">
@@ -64,6 +74,7 @@ export default function FeaturesSection() {
         </p>
       </section>
 
+      {/* CONTATTI */}
       <section id="contatti" className="mx-auto mb-20 max-w-2xl rounded-2xl bg-gray-100 p-8 shadow">
         <h2 className="mb-6 text-center text-4xl font-bold">Contattaci</h2>
         <p className="mb-6 text-center text-gray-700">Domande o collaborazioni? Scrivici.</p>
