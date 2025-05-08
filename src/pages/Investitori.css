@@ -1,0 +1,26 @@
+
+.invest-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #fff;
+}
+.invest-page h1 {
+  color: #4ea0ff;
+  font-size: 2rem;
+}
+.invest-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+.invest-page th, .invest-page td {
+  border: 1px solid #333;
+  padding: 0.5rem;
+}
+.invest-page th {
+  background: #11131a;
+}
+.invest-page a {
+  color: #4ea0ff;
+}

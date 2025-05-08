@@ -1,0 +1,28 @@
+
+.features-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.feature-item {
+  background: #11131a;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.feature-title {
+  margin: 0;
+  color: #4ea0ff;
+  font-size: 1.25rem;
+}
+.feature-desc {
+  margin-top: 0.5rem;
+  color: #ccc;
+}
+.app-footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: #666;
+  font-size: 0.9rem;
+}
